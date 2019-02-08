@@ -20,7 +20,11 @@ public class Main {
 
         // Proceso
         try {
-            // Hora Entrada
+            // Rótulo
+            System.out.println("Distancia entre Horas");
+            System.out.println("=====================");
+            
+            // Hora Inicio
             System.out.print("Hora inicio ......: ");
             int hEnt = scn.nextInt();
             scn.nextLine();
@@ -31,6 +35,9 @@ public class Main {
             int sEnt = scn.nextInt();
             scn.nextLine();
 
+            // Separador
+            System.out.println("---");
+            
             // Hora Actual
             int hAct = gc.get(Calendar.HOUR_OF_DAY);
             int mAct = gc.get(Calendar.MINUTE);
@@ -42,7 +49,7 @@ public class Main {
 
             // Segundos
             int sDis = tiempoAct - tiempoEnt;
-
+            
             // Minutos
             int mDis = sDis / 60;
             sDis = sDis % 60;
@@ -52,12 +59,11 @@ public class Main {
             mDis = mDis % 60;
 
             // Salidas
-            System.out.printf("Hora inicio ......: %02d:%02d:%02d\n", hEnt, mEnt, sEnt);
-            System.out.printf("Hora actual ......: %02d:%02d:%02d\n", hAct, mAct, sAct);
-            System.out.printf("Tiempo de clase ..: %2d:%02d:%02d\n", hDis, mDis, sDis);
+            System.out.printf("Hora actual ......: %02d:%02d:%02d%n", hAct, mAct, sAct);
+            System.out.printf("Hora inicio ......: %02d:%02d:%02d%n", hEnt, mEnt, sEnt);
+            System.out.printf("Tiempo de clase ..:  %2d:%02d:%02d%n", hDis, mDis, sDis);
         } catch (Exception e) {
-            System.out.println("Error de entrada");
-            scn.nextLine();
+            System.out.println("Error: Entrada incorrecta");
         }
     }
 }
